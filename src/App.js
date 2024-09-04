@@ -1,6 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Componentes/Home";
+import Footer from "./Componentes/Footer";
+import Headre from "./Componentes/Hearder";
 
 function App() {
   useEffect(() => {
@@ -23,7 +27,7 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>Welcome to Telegram Mini App!</h1>
+      {/* <h1>Welcome to Telegram Mini App!</h1>
       {user && (
         <div>
           <p>
@@ -31,7 +35,13 @@ function App() {
           </p>
           <p>Username: {user.username}</p>
         </div>
-      )}
+      )} */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
